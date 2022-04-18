@@ -1,0 +1,50 @@
+{
+    "name": "jhoff/eloquent-extra-attributes",
+    "description": "Dynamic database attributes for Laravel Eloquent",
+    "homepage": "https://www.github.com/jhoff/eloquent-extra-attributes.git",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jordan Hoff",
+            "email": "jhoff484@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": ">=8.28 | 9.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jhoff\\EloquentExtraAttributes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jhoff\\EloquentExtraAttributes\\Tests\\": "tests",
+            "Database\\Factories\\Jhoff\\EloquentExtraAttributes\\": "database/factories/"
+        }
+    },
+    "config": {
+        "secure-http": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "lock": false
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TwoThirds\\EloquentTraits\\EloquentTraitsServiceProvider"
+            ]
+        }
+    }
+}
