@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "TwoThirds\\EloquentTraits\\EloquentTraitsServiceProvider"
+                "Jhoff\\EloquentExtraAttributes\\EloquentExtraAttributesServiceProvider"
             ]
         }
     }
