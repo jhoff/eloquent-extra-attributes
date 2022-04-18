@@ -13,14 +13,16 @@ class CreateExtraAttributesTable extends Migration
      */
     public function up()
     {
-        Schema::create('extra_attributes', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('model_id')->index();
-            $table->string('model_type')->index();
-            $table->json('attrs');
-            $table->timestamps();
+        if (! Schema::hasTable('extra_attributes')) {
+            Schema::create('extra_attributes', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('model_id')->index();
+                $table->string('model_type')->index();
+                $table->json('attrs');
+                $table->timestamps();
 
-            $table->unique(['model_id', 'model_type']);
-        });
+                $table->unique(['model_id', 'model_type']);
+            });
+        }
     }
 }
