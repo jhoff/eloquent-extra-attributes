@@ -17,6 +17,9 @@
     "require-dev": {
         "orchestra/testbench": "^6.0 || ^7.0"
     },
+    "suggest": {
+        "64robots/nova-fields": "Required if using the ExtraAttributes Nova field"
+    },
     "autoload": {
         "psr-4": {
             "Jhoff\\EloquentExtraAttributes\\": "src/"
